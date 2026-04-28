@@ -30,7 +30,7 @@ app.use('/products', productRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));   
     
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello World!  Foodbox');
 });
 
