@@ -10,10 +10,22 @@ const firmSchema = new mongoose.Schema({
     required: true,
   },
   category: {
-    type: [{ type: String, enum: ["vegetarian", "non-vegetarian", "vegan"] }],
+    type: [{ 
+      type: String, 
+      enum: {
+        values: ["vegetarian", "non-vegetarian", "vegan"],
+        message: "Category must be one of: vegetarian, non-vegetarian, vegan"
+      }
+    }],
   },
   region: {
-    type: [{ type: String, enum: ["north", "south", "chinese", "west"] }],
+    type: [{ 
+      type: String, 
+      enum: {
+        values: ["north", "south", "chinese", "west"],
+        message: "Region must be one of: north, south, chinese, west"
+      }
+    }],
   },
   offer: {
     type: String,
